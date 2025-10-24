@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides&family=Playwrite+DE+SAS:wght@100..400&display=swap');
+
+:root {
+    --font-family: "Playwrite DE SAS", cursive;
+    --primary-color: black;
+    --bg-color: #111;
+    --card-bg: #222;
+    --btn-bg: #444;
+    --btn-hover: var(--primary-color);
+}
+
+/* ------------------ Body ------------------ */
+body {
+    font-family: var(--font-family), sans-serif;
+    background: var(--bg-color);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------ Title ------------------ */
+.title {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+/* ------------------ Filters ------------------ */
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filters button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background: var(--btn-bg);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filters button.active,
+.filters button:hover {
+    background: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+/* ------------------ Gallery Flexbox ------------------ */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Align left like Pinterest */
+    gap: 20px;
+    padding: 30px;
+}
+
+/* ------------------ Image Cards ------------------ */
+.image-card {
+    /* position: relative; */
+    display: flex;
+    width: fit-content;    /* Adjusts the card width to the image */
+    overflow: hidden;      /* Removes any extra space */
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--card-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Remove fixed flex size */
+    flex: 0 0 auto; /* Don't grow or shrink; size based on content */
+}
+
+.image-card img {
+    display: block; /* Removes the default inline spacing */
+    width: 100%;    /* Optional: makes the image responsive */
+    height: auto;   /* Maintains aspect ratio */
+    max-width: 100%; /* Prevent overflowing container */
+    min-height: unset;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* ------------------ Lightbox ------------------ */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.747);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.lightbox img:hover {
+    transform: scale(1.02);
+}
+
+/* Controls positioned over image */
+.lightbox .controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.lightbox .controls button {
+    pointer-events: all;
+    padding: 10px 20px;
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-style:ridge;
+}
+
+.lightbox .controls button:hover {
+    background: #414243;
+    transform: scale(1.05);
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close:hover {
+    transform: scale(1.2);
+}
+
+
+#download {
+    position: relative;
+    border-width: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 1;
+    border: #fff;
+    border-style: groove;
+
+    margin: 20px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#download:hover {
+    /* background: #00a1b0; */
+    border: #fff;
+    border-style:dashed;
+    transform: scale(1.05);
+}
+
+.search-bar {
+    margin: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #0f0f0f;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    background: #f1f1f1;
+    color: #111;
+}
+
+
+
+/* ------------------ Search Suggestions ------------------ */
+.suggestions {
+    position: absolute;
+    background: #1a1a1a;
+    width: 60%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 100;
+    text-align: left;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: background 0.3s ease;
+   
+}
+
+.suggestion-item:hover {
+    background: #333;
+}
+
+
+
+
+/* ------------------ Animations ------------------ */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 768px) {
+    .image-card {
+        flex: 1 1 180px;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .filters button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-card {
+        flex: 1 1 150px;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .lightbox .controls {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        bottom: 0;
+        gap: 100px;
+    }
+    .lightbox button {
+        width: 100px;
+        
+    }
+}

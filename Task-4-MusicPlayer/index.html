@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player | Code Alpha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="music-container">
+    <h1 class="app-title">🎧 Code Alpha Music Player</h1>
+
+    <div class="song-info">
+      <h2 id="title">Blinding Lights</h2><br>
+      <h3 id="artist">The Weeknd</h3>
+    </div>
+
+    <audio id="audio" src="songs/blinding-lights.mp3"></audio>
+
+    <div class="controls">
+      <button id="prev" class="btn">⏮</button>
+      <button id="play" class="btn">▶<i class="fa-solid fa-play"></i></button>
+      <button id="next" class="btn">⏭</button>
+    </div>
+
+    <div class="progress-container" id="progress-container">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="time-display">
+      <span id="current-time">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+
+    <div class="volume-control">
+      <label for="volume">🔊</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </div>
+
+    <div class="playlist">
+      <h3>Playlist</h3>
+      <ul id="playlist"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

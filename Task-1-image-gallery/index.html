@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery | Code Alpha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 class="title">Image Gallery</h1>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search images..." />
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <!-- Optional Filters -->
+  <div class="filters">
+    <button data-category="all" class="active">All</button>
+    <button data-category="nature">Nature</button>
+    <button data-category="city">City</button>
+    <button data-category="animals">Animals</button>
+    <button data-category="birds">Birds</button>
+    <button data-category="cars">Cars</button>
+    <button data-category="anime">Anime</button>
+    <button data-category="emoji">Emoji</button>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="gallery">
+    <div class="image-card" data-category="nature">
+      <img src="" alt="" />
+    </div>
+    <div class="image-card" data-category="city">
+      <img src="" alt="" />
+    </div>
+    <div class="image-card" data-category="car">
+      <img src="" alt="">
+    </div>
+    <div class="image-card" data-category="bird">
+      <img src="" alt="">
+    </div>
+    <!-- Add more images -->
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <span class="close">&times;</span>
+    <a id="download" class="download-button" href="#" download target="_blank">
+      <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      stroke="currentColor"
+      stroke-width="2"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="css-i6dzq1"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg> Download</a>
+    
+    <div>
+      <img class="lightbox-image" src="" alt="Preview" />
+    </div>
+    <hr>
+    <br>
+    <div class="controls">
+      <div class="controls">
+        <button id="prev">⏮ Prev</button>
+        <button id="next">Next ⏭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

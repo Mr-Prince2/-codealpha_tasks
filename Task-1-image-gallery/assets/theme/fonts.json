@@ -1,0 +1,12 @@
+{
+  "fonts": {
+    "title": "'Playwrite DE Grund Guides', cursive",
+    "primary": "'Poppins', sans-serif",
+    "secondary": "'Roboto', sans-serif",
+    "heading": "'Playfair Display', serif"
+  },
+  "links": [
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;700&family=Playfair+Display:wght@600&display=swap",
+    "https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides&display=swap"
+  ]
+}

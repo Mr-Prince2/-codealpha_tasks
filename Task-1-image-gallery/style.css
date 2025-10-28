@@ -65,7 +65,6 @@ body {
     display: flex;
     width: fit-content;    /* Adjusts the card width to the image */
     overflow: hidden;      /* Removes any extra space */
-    overflow: hidden;
     border-radius: 10px;
     background: var(--card-bg);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -193,21 +192,39 @@ body {
 }
 
 .search-bar {
-    margin: 20px;
+  position: relative; /* Needed for absolute positioning */
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  line-height: 28px;
+}
+.search-bar input {
+    max-width: 300px;
+    height: 20px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    width: 100%;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #D9E8D8;
+    color: #0d0c22;
+    box-shadow: 0 0 5px #C1D9BF, 0 0 0 10px #f5f5f5eb;
+    transition: .3s ease;
 }
 
-.search-bar input {
-    padding: 10px;
-    width: 60%;
-    max-width: 400px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
+.search-bar input ::placeholder{
+     color: #777;
 }
 
 .search-bar button {
     padding: 10px 20px;
-    margin-left: 10px;
+    margin-left: 1px;
     border: none;
     border-radius: 8px;
     background: #0f0f0f;
@@ -222,32 +239,46 @@ body {
 }
 
 
-
 /* ------------------ Search Suggestions ------------------ */
+.search-bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .suggestions {
-    position: absolute;
-    background: #1a1a1a;
-    width: 60%;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-    z-index: 100;
-    text-align: left;
-    display: none;
+  position: absolute;
+  top: calc(100% + 6px); /* below the input field */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 400px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 99;
+  display: none;
+  animation: fadeIn 0.25s ease;
 }
 
 .suggestion-item {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-bottom: 1px solid #333;
-    transition: background 0.3s ease;
-   
+  padding: 10px 15px;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .suggestion-item:hover {
-    background: #333;
+  background: #222;
+  transform: translateX(4px);
+  box-shadow: inset 0 0 10px #00ffff66; /* cyan anime glow */
 }
+
+
 
 
 
@@ -257,6 +288,8 @@ body {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+
 
 /* ------------------ Responsive ------------------ */
 @media (max-width: 768px) {
